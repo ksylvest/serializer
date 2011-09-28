@@ -36,7 +36,7 @@ module Serializer
         
         define_method "#{method}?" do
           hash = send(name)
-          result = hash[method.intern] 
+          result = hash[method.intern] if hash
           return options[:default] if hash.nil? or result.nil?
           return result
         end
