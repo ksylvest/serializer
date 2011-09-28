@@ -1,0 +1,36 @@
+<%= form_for(@user) do |f| %>
+
+  <% if @user.errors.any? %>
+    <p><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</p>
+    <ul>
+    <% @user.errors.each do |attribute, message| %>
+      <li><%= "#{attribute} : #{message}" %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Name:" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email, "Email:" %><br />
+    <%= f.text_field :email %>
+  </div>
+  
+  <div class="field">
+    <%= f.check_box :fb_share %>
+    <%= f.label :fb_share, "FB Share" %>
+  </div>
+  
+  <div class="field">
+    <%= f.check_box :tw_share %>
+    <%= f.label :tw_share, "TW Share" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

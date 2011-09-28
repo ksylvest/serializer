@@ -1,0 +1,7 @@
+demo:
+  name: Kevin
+  email: kevin@gmail.com
+  settings: |
+    ---
+    :fb_share: true
+    :tw_share: true

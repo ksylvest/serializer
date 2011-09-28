@@ -1,0 +1,52 @@
+= Serializer
+
+Serializer is a Ruby on Rails tool for adding defaults and accessors to a serialized attribute.
+
+== Requirements
+
+The gem is tested with Ruby 1.9.2 and Rails 3.1.0 but may well work with other versions of Ruby and Rails.
+
+== Installation
+
+  gem install serializer
+
+== Examples
+
+Migration:
+
+  rails g model user name:string email:string settings:text
+
+Model:
+
+  class User < ActiveRecord::Base
+  
+    has_serialized :settings do |settings|
+      settings.define :tw_share, type: :boolean, default: true
+      settings.define :fb_share, type: :boolean, default: true
+      settings.define :completion, type: :float, default: 50.0
+    end
+  
+  end
+  
+Form:
+
+  <%= form_for @user do |form| %>
+    <%= form.text_field :name %>
+    <%= form.email_field :email %>
+    <%= form.checkbox_box :tw_share %>
+    <%= form.checkbox_box :fb_share %>
+  <% end %>
+  
+View:
+
+  <%- if @user.tw_share? -%>
+    ...
+  <%- end -%>
+  
+  <%- if @user.fb_share? -%>
+    ...
+  <%- end -%>
+  
+== Copyright
+
+Copyright (c) 2010 - 2011 Kevin Sylvestre. See LICENSE for details.
