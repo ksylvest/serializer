@@ -1,6 +1,6 @@
 = Serializer
 
-Serializer is a Ruby on Rails tool for adding defaults and accessors to a serialized attribute.
+Serializer is a Ruby on Rails tool for adding accessor to serialized attributes with support for types and defaults.
 
 == Requirements
 

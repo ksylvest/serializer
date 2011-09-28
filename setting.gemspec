@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Kevin Sylvestre"]
   s.email       = ["kevin@ksylvest.com"]
   s.homepage    = "http://github.com/ksylvest/serializer"
-  s.summary     = "A serialized attribute default and type kneading gem"
-  s.description = "Serializer is a Ruby on Rails tool for adding defaults and accessors to a serialized attribute."
+  s.summary     = "A serialized attribute accessor gem with support for types and defaults"
+  s.description = "Serializer is a Ruby on Rails tool for adding accessor to serialized attributes with support for types and defaults."
   s.files       = Dir.glob("{bin,lib}/**/*") + %w(README.rdoc LICENSE Gemfile Rakefile)
 end
