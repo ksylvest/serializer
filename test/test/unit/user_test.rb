@@ -9,6 +9,19 @@ class UserTest < ActiveSupport::TestCase
     assert @user.tw_share?, "should have defaults"
   end
   
+  test "missing settings" do
+    @user = users(:missing)
+    
+    assert @user.fb_share?, "should have defaults"
+    assert @user.tw_share?, "should have defaults"
+    
+    @user.fb_share = false
+    @user.tw_share = false
+    
+    assert !@user.fb_share?, "should change settings"
+    assert !@user.tw_share?, "should change settings"
+  end
+  
   test "falsify then truthify attributes" do
     @user = User.create(name: "Kevin", email: "kevin@ksylvest.com", fb_share: false, tw_share: false)
     

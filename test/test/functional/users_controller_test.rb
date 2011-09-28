@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   
   setup do
-    @user = users(:demo)
+    @user = users(:default)
   end
 
   test "should get index" do

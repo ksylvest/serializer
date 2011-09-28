@@ -28,18 +28,23 @@ module Serializer
       initializer.each do |method, options|
         
         define_method "#{method}" do
-          result = send(name)[method.intern]
-          return options[:default] if result.nil?
+          hash = send(name)
+          result = hash[method.intern] if hash
+          return options[:default] if hash.nil? or result.nil?
           return result
         end
         
         define_method "#{method}?" do
-          result = send(name)[method.intern] 
-          return options[:default] if result.nil?
+          hash = send(name)
+          result = hash[method.intern] 
+          return options[:default] if hash.nil? or result.nil?
           return result
         end
         
         define_method "#{method}=" do |value|
+          send("#{name}=", {}) unless send(name)
+          hash = send(name)
+          
           if options[:type] and value
             case options[:type].intern
             when :float   then value = value.to_f if value.respond_to? :to_f
