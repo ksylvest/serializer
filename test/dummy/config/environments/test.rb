@@ -1,5 +1,5 @@
-Serializer::Application.configure do
-  # Serializers specified here will take precedence over those in config/application.rb
+Dummy::Application.configure do
+  # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's
   # test suite.  You never need to work with it otherwise.  Remember that
@@ -36,7 +36,4 @@ Serializer::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
-
-  # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
-  config.assets.allow_debugging = true
 end
