@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-$:.push File.join(File.dirname(__FILE__), 'lib')
+$:.push File.expand_path("../lib", __FILE__)
 require "serializer/version"
 
 Gem::Specification.new do |s|
@@ -11,5 +11,9 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/ksylvest/serializer"
   s.summary     = "A serialized attribute accessor gem with support for types and defaults"
   s.description = "Serializer is a Ruby on Rails tool for adding accessor to serialized attributes with support for types and defaults."
-  s.files       = Dir.glob("{bin,lib}/**/*") + %w(README.rdoc LICENSE Gemfile Rakefile)
+
+  s.files       = Dir["{bin,lib}/**/*"] + %w(README.rdoc LICENSE Rakefile)
+  s.test_files  = Dir["test/**/*"]
+
+  s.add_dependency "rails", "> 3.0.0"
 end
