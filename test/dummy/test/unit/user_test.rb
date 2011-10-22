@@ -2,8 +2,10 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   
+  fixtures :all
+  
   test "defaults" do
-    @user = User.create(name: "Kevin", email: "kevin@ksylvest.com")
+    @user = User.create(:name => "Kevin", :email => "kevin@ksylvest.com")
     
     assert @user.fb_share?, "should have defaults"
     assert @user.tw_share?, "should have defaults"
@@ -23,7 +25,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "falsify then truthify attributes" do
-    @user = User.create(name: "Kevin", email: "kevin@ksylvest.com", fb_share: false, tw_share: false)
+    @user = User.create(:name => "Kevin", :email => "kevin@ksylvest.com", :fb_share => false, :tw_share => false)
     
     assert !@user.fb_share?, "should not have FB sharing if false"
     assert !@user.tw_share?, "should not have TW sharing if false"
@@ -37,7 +39,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "truthify then falsify attributes" do
-    @user = User.create(name: "Kevin", email: "kevin@ksylvest.com", fb_share: true, tw_share: true)
+    @user = User.create(:name => "Kevin", :email => "kevin@ksylvest.com", :fb_share => true, :tw_share => true)
     
     assert @user.fb_share?, "should have FB sharing if true"
     assert @user.tw_share?, "should have TW sharing if true"

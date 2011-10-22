@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class UserCreateTest < ActionDispatch::IntegrationTest
+  
   fixtures :all
-
+  
   test "create user" do
     get new_user_path
     assert_response :success
