@@ -29,14 +29,14 @@ module Serializer
         
         define_method "#{method}" do
           hash = send(name)
-          result = hash[method.intern] if hash
+          result = hash[method.to_sym] if hash
           return options[:default] if hash.nil? or result.nil?
           return result
         end
         
         define_method "#{method}?" do
           hash = send(name)
-          result = hash[method.intern] if hash
+          result = hash[method.to_sym] if hash
           return options[:default] if hash.nil? or result.nil?
           return result
         end
@@ -46,7 +46,7 @@ module Serializer
           hash = send(name)
           
           if options[:type] and value
-            case options[:type].intern
+            case options[:type].to_sym
             when :float   then value = value.to_f if value.respond_to? :to_f
             when :integer then value = value.to_i if value.respond_to? :to_i
             when :string  then value = value.to_str if value.respond_to? :to_str
@@ -55,7 +55,7 @@ module Serializer
             end
           end
           
-          send(name)[method.intern] = value
+          send(name)[method.to_sym] = value
         end
         
       end
