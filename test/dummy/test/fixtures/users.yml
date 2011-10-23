@@ -1,6 +1,6 @@
 default:
   name: Kevin
-  email: kevin@gmail.com
+  email: info@example.com
   settings: |
     ---
     :fb_share: true
@@ -8,4 +8,4 @@ default:
     
 missing:
   name: Kevin
-  email: kevin@gmail.com
+  email: info@example.com

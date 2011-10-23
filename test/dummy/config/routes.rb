@@ -1,6 +1,6 @@
 Dummy::Application.routes.draw do
   
-  root to: "main#index"
+  root :to => "main#index"
 
   resources :users
 
