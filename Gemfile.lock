@@ -45,6 +45,7 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.1)
+    json (1.6.1-java)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -95,12 +96,12 @@ GEM
     tzinfo (0.3.30)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
   jquery-rails
   minitest
-  rails
   serializer!
   sqlite3
   turn
