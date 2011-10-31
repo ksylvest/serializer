@@ -4,7 +4,14 @@ Serializer is a Ruby on Rails tool for adding accessor to serialized attributes 
 
 == Requirements
 
-The gem is tested with Ruby 1.9.2 and Rails 3.1.0 but may well work with other versions of Ruby and Rails.
+The gem is tested with:
+
+* Ruby (MRI) 1.9.3 (p0)
+* Ruby (MRI) 1.9.2 (p180)
+* Ruby (MRI) 1.8.7 (p334)
+* Ruby (REE) 1.8.7 (2011.03)
+* JRuby 1.6.2
+* Rubinius 1.2.4
 
 == Installation
 
