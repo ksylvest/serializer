@@ -51,7 +51,10 @@ module Serializer
             when :integer then value = value.to_i if value.respond_to? :to_i
             when :string  then value = value.to_str if value.respond_to? :to_str
             when :symbol  then value = value.to_sym if value.respond_to? :to_sym
-            when :boolean then value = !value.to_i.zero? if value.respond_to? :to_i
+            when :boolean then 
+              value = true  if value.eql? "true"
+              value = false if value.eql? "false"
+              value = !value.to_i.zero? if value.respond_to? :to_i
             end
           end
           

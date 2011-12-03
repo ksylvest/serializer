@@ -29,6 +29,16 @@
     <%= f.label :tw_share, "TW Share" %>
   </div>
   
+  <div class="field">
+    <%= f.radio_button :tumblr_share, true %>
+    <%= f.label :tumblr_share_true, "Enable Tumblr Share" %>
+  </div>
+  
+  <div class="field">
+    <%= f.radio_button :tumblr_share, false %>
+    <%= f.label :tumblr_share_false, "Disable Tumblr Share" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
