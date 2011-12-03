@@ -53,7 +53,11 @@ View:
   <%- if @user.fb_share? -%>
     ...
   <%- end -%>
-  
+
+== Status
+
+{<img src="http://travis-ci.org/ksylvest/serializer.png" />}[http://travis-ci.org/ksylvest/serializer]
+
 == Copyright
 
 Copyright (c) 2010 - 2011 Kevin Sylvestre. See LICENSE for details.
