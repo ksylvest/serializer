@@ -30,14 +30,34 @@ module Serializer
         define_method "#{method}" do
           hash = send(name)
           result = hash[method.to_sym] if hash
-          return options[:default] if hash.nil? or result.nil?
+          
+          if hash.nil? or result.nil?
+            send("#{name}=", {}) unless send(name)
+            hash = send(name)
+            
+            result = options[:default]
+            result = result.clone if result.duplicable?
+            
+            hash[method.to_sym] = result
+          end
+          
           return result
         end
         
         define_method "#{method}?" do
           hash = send(name)
           result = hash[method.to_sym] if hash
-          return options[:default] if hash.nil? or result.nil?
+          
+          if hash.nil? or result.nil?
+            send("#{name}=", {}) unless send(name)
+            hash = send(name)
+            
+            result = options[:default]
+            result = result.clone if result.duplicable?
+            
+            hash[method.to_sym] = result
+          end
+          
           return result
         end
         
