@@ -68,7 +68,7 @@ class UserTest < ActiveSupport::TestCase
     
     @user.status = "admin"
     
-    assert @user.status.eql? :admin
+    assert @user.status.eql?(:admin), "should convert symbol whenever possible"
   end
   
   test "configuring array and hash attributes" do
@@ -78,8 +78,8 @@ class UserTest < ActiveSupport::TestCase
     @user_a.permissions << "update"
     @user_b.permissions << "create"
     
-    assert @user_a.permissions.eql? ["update"]
-    assert @user_b.permissions.eql? ["create"]
+    assert @user_a.permissions.eql?(["update"]), "should modify a seperate copy of the default argument"
+    assert @user_b.permissions.eql?(["create"]), "should modify a seperate copy of the default argument"
   end
   
   test "configuring string attributes" do
@@ -89,14 +89,22 @@ class UserTest < ActiveSupport::TestCase
     @user_a.location = "France"
     @user_b.location = "Mexico"
     
-    assert @user_a.location.eql? "France"
-    assert @user_b.location.eql? "Mexico"
+    assert @user_a.location.eql?("France"), "should handle string attributes"
+    assert @user_b.location.eql?("Mexico"), "should handle string attributes"
   end
   
   test "a missing default" do
     @user = User.create(:name => "Kevin", :email => "kevin@example.com")
     
-    assert @user.location.eql? nil
+    assert @user.location.eql?(nil), "should handle missing defaults"
+  end
+  
+  test "a missing type" do
+    @user = User.create(:name => "Kevin", :email => "kevin@example.com")
+    
+    @user.mystery = {}
+    
+    assert @user.mystery.eql?({}), "should handle missing types"
   end
   
 end

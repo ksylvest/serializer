@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
     settings.define :percentage, :default => 0.0, :type => :float
     
     settings.define :permissions, :default => [], :type => :array
+    
+    settings.define :mystery
   end
   
 end
