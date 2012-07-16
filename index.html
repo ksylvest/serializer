@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Serializer by ksylvest</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Serializer</h1>
+        <p>A serialized attribute accessor gem with support for types and defaults</p>
+
+        <p class="view"><a href="https://github.com/ksylvest/serializer">View the Project on GitHub <small>ksylvest/serializer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/ksylvest/serializer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/ksylvest/serializer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/ksylvest/serializer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Serializer</h1>
+
+<p>Serializer is a Ruby on Rails tool for adding accessor to serialized attributes with support for types and defaults.</p>
+
+<h2>Requirements</h2>
+
+<p>The gem is tested with:</p>
+
+<ul>
+<li>Ruby (MRI) 1.9.3 (p0)</li>
+<li>Ruby (MRI) 1.9.2 (p180)</li>
+<li>Ruby (MRI) 1.8.7 (p334)</li>
+<li>Ruby (REE) 1.8.7 (2011.03)</li>
+<li>JRuby 1.6.2</li>
+<li>Rubinius 1.2.4</li>
+</ul><h2>Installation</h2>
+
+<pre><code>gem install serializer
+</code></pre>
+
+<h2>Examples</h2>
+
+<p>Migration:</p>
+
+<pre><code>rails g model user name:string email:string settings:text
+</code></pre>
+
+<p>Model:</p>
+
+<pre><code>class User &lt; ActiveRecord::Base
+
+  has_serialized :settings do |settings|
+    settings.define :tw_share, type: :boolean, default: true
+    settings.define :fb_share, type: :boolean, default: true
+    settings.define :completion, type: :float, default: 50.0
+  end
+
+end
+</code></pre>
+
+<p>Form:</p>
+
+<pre><code>&lt;%# form_for @user do |form| %&gt;
+  &lt;%# form.text_field :name %&gt;
+  &lt;%# form.email_field :email %&gt;
+  &lt;%# form.checkbox_box :tw_share %&gt;
+  &lt;%# form.checkbox_box :fb_share %&gt;
+&lt;% end %&gt;
+</code></pre>
+
+<p>View:</p>
+
+<pre><code>&lt;%- if @user.tw_share? -%&gt;
+  ...
+&lt;%- end -%&gt;
+
+&lt;%- if @user.fb_share? -%&gt;
+  ...
+&lt;%- end -%&gt;
+</code></pre>
+
+<h2>Copyright</h2>
+
+<p>Copyright (c) 2010 - 2012 Kevin Sylvestre. See LICENSE for details.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/ksylvest">ksylvest</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31911059-1 ");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
