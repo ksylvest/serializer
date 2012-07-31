@@ -13,7 +13,6 @@ class AccountTest < ActiveSupport::TestCase
     @account.save
     
     @user = @account.user
-    @user.reload
     
     assert @user.account, "should have an account"
     assert !@user.fb_share?, "should have accepted nested attributes"
