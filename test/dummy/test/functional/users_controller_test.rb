@@ -49,4 +49,5 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
+  
 end

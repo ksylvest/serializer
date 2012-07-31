@@ -1,4 +1,5 @@
 default:
+  account: default
   name: Kevin
   email: info@example.com
   settings: |

@@ -1,0 +1,17 @@
+<p>
+  <b>Name:</b>
+  <%= user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= user.email %>
+</p>
+
+<%- if user.fb_share? -%>
+  <p>FB Share</p>
+<%- end -%>
+
+<%- if user.tw_share? -%>
+  <p>TW Share</p>
+<%- end -%>
