@@ -1,0 +1,10 @@
+%p
+  %b Name:
+  = user.name
+%p
+  %b Email:
+  = user.email
+- if user.fb_share?
+  %p FB Share
+- if user.tw_share?
+  %p TW Share

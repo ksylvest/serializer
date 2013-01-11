@@ -1,0 +1,5 @@
+%h1 Show
+%p#notice= notice
+= render 'user', :user => @user
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path

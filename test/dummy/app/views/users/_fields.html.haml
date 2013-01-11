@@ -1,0 +1,18 @@
+.field
+  = f.label :name, "Name:"
+  = f.text_field :name
+.field
+  = f.label :email, "Email:"
+  = f.text_field :email
+.field
+  = f.check_box :fb_share
+  = f.label :fb_share, "FB Share"
+.field
+  = f.check_box :tw_share
+  = f.label :tw_share, "TW Share"
+.field
+  = f.radio_button :tb_share, true
+  = f.label :tb_share_true, "Enable Tumblr Share"
+.field
+  = f.radio_button :tb_share, false
+  = f.label :tb_share_false, "Disable Tumblr Share"
