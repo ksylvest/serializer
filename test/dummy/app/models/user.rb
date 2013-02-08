@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   
   belongs_to :account
+  has_one :subscription
     
   has_serialized :settings do |settings|
     settings.define :tw_share, :default => true, :type => :boolean
@@ -15,6 +16,9 @@ class User < ActiveRecord::Base
     settings.define :permissions, :default => [], :type => :array
     
     settings.define :mystery
+
+    settings.define :notification_comment, :type => :boolean, :default => false
   end
+
   
 end
