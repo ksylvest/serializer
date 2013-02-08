@@ -78,6 +78,7 @@ module Serializer
             end
           end
           
+          attribute_will_change!(name)
           send(name)[method.to_sym] = value
         end
         
