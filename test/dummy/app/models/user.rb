@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     
     settings.define :mystery
 
-    settings.define :notification_comment, :type => :boolean, :default => false
+    settings.define :notifications, :type => :boolean, :default => false
   end
 
   
