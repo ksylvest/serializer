@@ -12,7 +12,7 @@ class SubscriptionTest < ActiveSupport::TestCase
     @user.reload
 
     assert @user.subscription, "should have an subscription"
-    assert @user.notification_comment?, "should have accepted nested attributes setting to true"
+    assert @user.notifications?, "should have accepted nested attributes setting to true"
 
     @subscription.update_attributes({ "user_attributes" => { "notifications" => "0", "id" => user_id } })
     @user.reload
