@@ -1,21 +1,21 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
-  
+
   fixtures :all
-  
+
   test "accepts nested attributes for users on create" do
-    @account = Account.create({ :user_attributes => { :tw_share => false, :fb_share => false, :tb_share => true } })
+    @account = Account.create({ :name => "Personal", :user_attributes => { :tw_share => false, :fb_share => false, :tb_share => true } })
     @user = @account.user
-    
+
     assert @user.account, "should have an account"
     assert !@user.fb_share?, "should have accepted nested attributes"
     assert !@user.tw_share?, "should have accepted nested attributes"
     assert @user.tb_share?, "should have accepted nested attributes"
   end
-  
+
   test "accepts nested attributes for users on update" do
-    @account = Account.create()
+    @account = Account.create(:name => "Personal")
     @account.create_user()
 
     @account.update_attributes({ :user_attributes => { :tw_share => true, :fb_share => false, :tb_share => true } })

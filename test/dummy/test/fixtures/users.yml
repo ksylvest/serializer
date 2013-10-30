@@ -6,7 +6,7 @@ default:
     ---
     :fb_share: true
     :tw_share: true
-    
+
 missing:
   name: Kevin
   email: info@example.com

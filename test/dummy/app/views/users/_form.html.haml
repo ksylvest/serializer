@@ -1,10 +1,10 @@
-= form_for(@user) do |f|
-  - if @user.errors.any?
+= form_for(user) do |f|
+  - if user.errors.any?
     %p
-      = pluralize(@user.errors.count, "error")
+      = pluralize(user.errors.count, "error")
       prohibited this user from being saved:
     %ul
-      - @user.errors.each do |attribute, message|
+      - user.errors.each do |attribute, message|
         %li= "#{attribute} : #{message}"
   = render 'fields', :f => f
   .actions

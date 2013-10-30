@@ -1,10 +1,8 @@
 rvm:
-  - 1.8.7
   - 1.9.2
   - 1.9.3
   - 2.0.0
   - jruby
-  - ree
   - rbx
 script: 
   - "sh -c 'cd test/dummy && bundle exec rake db:create db:migrate db:test:prepare'"

@@ -1,6 +1,6 @@
 /*
  *= require_self
- *= require_tree . 
+ *= require_tree .
 */
 
 html, body
@@ -10,7 +10,7 @@ html, body
   font-weight: normal;
 }
 
-.field_with_errors 
-{ 
+.field_with_errors
+{
   display: inline;
 }

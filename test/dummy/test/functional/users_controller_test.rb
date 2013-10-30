@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  
+
   fixtures :all
-  
+
   setup do
     @user = users(:default)
   end
@@ -49,5 +49,5 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
-  
+
 end

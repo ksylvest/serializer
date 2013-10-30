@@ -4,14 +4,20 @@ gemspec
 
 gem 'rails'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'bootstrap-sass-rails'
-end
+# Legacy:
+
+gem 'protected_attributes'
+
+# Assets:
+
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'bootstrap-sass-rails'
 
 gem 'haml-rails'
 gem 'jquery-rails'
+
+# Other:
 
 group :test do
   gem 'minitest'
