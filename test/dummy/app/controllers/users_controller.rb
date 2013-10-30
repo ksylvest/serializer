@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     respond_with(@user)
   end
   
-  # PUT /users/:id
+  # PATCH /users/:id
   def update
     @user = User.find(params[:id])
     @user.attributes = params[:user]

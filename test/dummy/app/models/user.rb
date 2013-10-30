@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  
+
   belongs_to :account
   has_one :subscription
-    
+ 
   has_serialized :settings do |settings|
     settings.define :tw_share, :default => true, :type => :boolean
     settings.define :fb_share, :default => true, :type => :boolean
@@ -20,5 +20,4 @@ class User < ActiveRecord::Base
     settings.define :notifications, :type => :boolean, :default => false
   end
 
-  
 end
