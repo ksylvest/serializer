@@ -8,9 +8,8 @@ The gem is tested with:
 
 * Ruby (MRI) 2.0.0
 * Ruby (MRI) 1.9.3
-* Ruby (MRI) 1.9.2
-* JRuby 1.7.2
-* Rubinius 1.2.4
+* JRuby 1.7.6
+* Rubinius 2.1.1
 
 == Installation
 
