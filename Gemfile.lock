@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    serializer (1.0.0)
+    serializer (1.0.2)
       rails (> 3.0.0)
 
 GEM
