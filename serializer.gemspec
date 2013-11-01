@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/ksylvest/serializer"
   s.summary     = "A serialized attribute accessor gem with support for types and defaults"
   s.description = "Serializer is a Ruby on Rails tool for adding accessor to serialized attributes with support for types and defaults."
+  s.license     = 'MIT'
 
   s.files       = Dir["{bin,lib}/**/*"] + %w(README.rdoc LICENSE Rakefile)
   s.test_files  = Dir["test/**/*"]
